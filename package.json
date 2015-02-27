@@ -1,0 +1,28 @@
+{
+  "name": "beat-emmiter.js",
+  "version": "0.0.0",
+  "description": "dispatch event on beat",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive test",
+    "test_watch": "mocha --recursive -w test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/umezo/beat-emmiter.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umezo/beat-emmiter.js/issues"
+  },
+  "dependencies": {
+    "debug": "~2.1.1"
+  },
+  "devDependencies": {
+    "mocha": "~2.1.0",
+    "expect.js": "~0.3.1",
+    "lodash": "~3.3.1"
+  },
+  "homepage": "https://github.com/umezo/beat-emmiter.js"
+}
