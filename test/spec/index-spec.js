@@ -1,6 +1,4 @@
 "use strict";
-import support from 'source-map-support'
-support.install();
 
 import assert from 'power-assert'
 import {BeatEmitter} from "../../lib/index.js";
