@@ -53,6 +53,8 @@ describe("beat-emmiter", ()=> {
 
       assert(_.isArray(fired));
       assert.strictEqual(fired.length,2);
+      assert.strictEqual(fired[0],1000);
+      assert.strictEqual(fired[1],2000);
 
       done();
     });
