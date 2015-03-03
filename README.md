@@ -14,10 +14,9 @@ beat.on('beat',function(currentBeat,fired){
 });
 
 
-var s = new Date().getTime();
+var audio = document.getElementById('audio-element');
 setTimeout(function(){
-  var g = new Date().getTime();
-  beat.tickAt(g-s);
+  beat.tickAt(audio.currentTime);
 },10);
 
 ```

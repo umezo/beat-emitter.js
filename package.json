@@ -1,5 +1,5 @@
 {
-  "name": "beat-emmiter.js",
+  "name": "beat-emitter.js",
   "version": "0.0.0",
   "description": "dispatch event on beat",
   "main": "lib/index.js",
@@ -10,17 +10,16 @@
     "build": "babel src --out-dir lib --source-maps-inline",
     "watch": "babel src --out-dir lib --watch --source-maps-inline",
     "test": "npm run build && mocha --compilers js:espower-babel/guess test/spec/*.js",
-    "test_watch": "npm run build && mocha --compilers js:espower-babel/guess --recursive -w test/spec/*.js",
-    "docs": "jsdoc2md -t template/README.template.md lib/index.js > README.md"
+    "test_watch": "npm run build && mocha --compilers js:espower-babel/guess --recursive -w test/spec/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/umezo/beat-emmiter.js.git"
+    "url": "git://github.com/umezo/beat-emitter.js.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/umezo/beat-emmiter.js/issues"
+    "url": "https://github.com/umezo/beat-emitter.js/issues"
   },
   "devDependencies": {
     "babel": "^4.0.1",
@@ -34,5 +33,5 @@
     "txt-ast-traverse": "^1.2.0",
     "lodash": "~3.3.1"
   },
-  "homepage": "https://github.com/umezo/beat-emmiter.js"
+  "homepage": "https://github.com/umezo/beat-emitter.js"
 }
