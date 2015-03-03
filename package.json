@@ -1,6 +1,6 @@
 {
   "name": "beat-emitter.js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "dispatch event on beat",
   "main": "lib/index.js",
   "files": [
