@@ -3,6 +3,7 @@ import events from 'events';
 
 export class BeatEmitter extends events.EventEmitter{
   constructor(beats) {
+    super();
     this._timeAt = 0;
     this._beats = [0].concat(beats);
     this._index = 0;
