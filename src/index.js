@@ -4,7 +4,7 @@ import events from 'events';
 export class BeatEmitter extends events.EventEmitter{
 
   /**
-   * @param beats {Array<Integer>} list of time for beat
+   * @param {Array<Integer>} beats list of time for beat
    */
   constructor(beats) {
     super();
@@ -15,7 +15,7 @@ export class BeatEmitter extends events.EventEmitter{
 
   /**
    * ahead internal timer by specified duration
-   * @param duration {Integer} time to ahead
+   * @param {Integer} duration time to ahead
    */
   tick(duration) {
     this.tickAt(this._timeAt+duration);
@@ -24,7 +24,7 @@ export class BeatEmitter extends events.EventEmitter{
 
   /**
    * set internal timer to specified time
-   * @param time {Integer} absolute time
+   * @param {Integer} time absolute time
    */
   tickAt(time) {
     this._timeAt = time;
@@ -50,7 +50,7 @@ export class BeatEmitter extends events.EventEmitter{
 
   /**
    * __private method__
-   * @param pos {Integer} target time to calculate index
+   * @param {Integer} pos target time to calculate index
    * @return {Integer} beat index for pos
    *
    */
