@@ -66,6 +66,25 @@ export class BeatEmitter extends events.EventEmitter{
     return this._beats.length-1;
   }
 
+  /**
+   * @return {Object(before,just,after)}
+   */
+  near(){
+    let currentBeat = this._beats[this._index];
+    let beforeIndex = this._index;
+    let afterIndex = this._index + 1;
+    let result = {just:null};
+
+    if (currentBeat === this._timeAt) {
+      result.just = currentBeat;
+      beforeIndex--;
+    }
+
+    result.before = this._beats[beforeIndex];
+    result.after = this._beats[afterIndex];
+
+    return result;
+  }
 }
 
 
