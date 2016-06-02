@@ -2,24 +2,34 @@
 import events from 'events';
 
 export class BeatEmitter extends events.EventEmitter{
+
+  /**
+   * @param beats {Array<Integer>} list of time for beat
+   */
   constructor(beats) {
     super();
     this._timeAt = 0;
-    this._beats = [0].concat(beats);
+    this._beats = [null].concat(beats);
     this._index = 0;
   }
 
+  /**
+   * ahead internal timer by specified duration
+   * @param duration {Integer} time to ahead
+   */
   tick(duration) {
     this.tickAt(this._timeAt+duration);
   }
 
 
+  /**
+   * set internal timer to specified time
+   * @param time {Integer} absolute time
+   */
   tickAt(time) {
     this._timeAt = time;
 
-    //console.log('tick');
-    var lastIndex = this.update(time);
-    //console.log('    tick','index ->',this._index,'last ->',lastIndex,'len ->',this._beats.length);
+    let lastIndex = this.update(time);
 
     if (this._index < lastIndex) {
 
@@ -30,15 +40,23 @@ export class BeatEmitter extends events.EventEmitter{
     }
   }
 
+  /**
+   * all beats status should be set unfired
+   */
   reset() {
     this._index = 0;
+    this._timeAt = 0;
   }
 
+  /**
+   * __private method__
+   * @param pos {Integer} target time to calculate index
+   * @return {Integer} beat index for pos
+   *
+   */
   update(pos){
-    //console.log('update');
     for( let i = this._index+1, n = this._beats.length; i<n ; i++){
       let beat = this._beats[i];
-      //console.log('    update', 'condition:', beat>=pos, 'pos -> ', pos, 'beat -> ', beat, 'index -> ',this._index, 'i -> ',i);
 
       if (pos < beat) {
         return i-1;
